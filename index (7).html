@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <title>暫停蔗一刻｜帝國製糖廠影展專題</title>
+    <meta name="description" content="跳脫日常的框架，在帝國糖廠的歷史紅磚與湖畔水景間，開啟一場尋找自我內在平衡的影展專題。">
+    <meta name="keywords" content="暫停蔗一刻, 帝國糖廠, 影展專題, 臺中東區, 大二專題, SWOT分析">
+    <meta name="author" content="Student">
+
+    <!-- CSS 檔案切割匯入 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- 獨家原創：墨綠與古董金影展視覺風格 -->
+    <style>
+        :root {
+            --bg-color: #f2f4f1;
+            --primary-dark: #1f3028;
+            --accent-warm: #b38958;
+            --card-bg: #ffffff;
+            --text-main: #252b27;
+            --text-muted: #5d6760;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: var(--primary-dark) !important;
+            border-bottom: 3px solid var(--accent-warm);
+        }
+        .navbar .logo {
+            color: #f2f4f1;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+        }
+        .navbar .nav-links a {
+            color: #c9d3cc;
+            transition: color 0.3s;
+        }
+        .navbar .nav-links a:hover,
+        .navbar .nav-links a.active {
+            color: #ffffff;
+            background-color: var(--accent-warm);
+            border-radius: 4px;
+            padding: 4px 10px;
+        }
+
+        .sidebar {
+            background-color: #e4e9e5;
+            border-right: 1px solid #ccd6ce;
+            padding: 20px;
+            border-radius: 6px;
+        }
+        .sidebar h3 {
+            color: var(--primary-dark);
+            border-bottom: 2px solid var(--accent-warm);
+            padding-bottom: 6px;
+            font-size: 1.1rem;
+        }
+        .sidebar ul li a {
+            color: var(--text-muted);
+        }
+        .sidebar ul li a:hover {
+            color: var(--accent-warm);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(31, 48, 40, 0.8), rgba(31, 48, 40, 0.8)), url('images/1024x768_attractions-image-mwp5ghjdhuc0itvym5e1ne.jpg') center/cover !important;
+            border-radius: 8px;
+            padding: 55px 30px;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(31,48,40,0.15);
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+            color: #f5eedc;
+        }
+        .hero .btn-custom {
+            background-color: var(--accent-warm);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        .hero .btn-custom:hover {
+            background-color: #9c7347;
+        }
+
+        .content-box {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(31,48,40,0.06);
+            margin-top: 25px;
+        }
+        .content-box h2 {
+            color: var(--primary-dark);
+            border-left: 4px solid var(--accent-warm);
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* 影片導向專用美化區塊 */
+        .video-banner {
+            background: linear-gradient(rgba(31, 48, 40, 0.85), rgba(31, 48, 40, 0.85)), url('images/20230505123150_28.jpg') center/cover;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #fff;
+            margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .video-btn {
+            background-color: var(--accent-warm);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background 0.3s;
+        }
+        .video-btn:hover {
+            background-color: #9c7347;
+            transform: translateY(-2px);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #d5dfd7;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+        }
+        .card h3 {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            margin: 10px 0 6px 0;
+        }
+
+        /* SWOT 分析專屬 2x2 格局樣式 */
+        .swot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .swot-card {
+            background: #f9fbf9;
+            border: 1px solid #d5dfd7;
+            border-left: 5px solid var(--accent-warm);
+            padding: 20px;
+            border-radius: 6px;
+        }
+        .swot-card h3 {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .swot-card ul {
+            padding-left: 18px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+        .swot-card ul li {
+            margin-bottom: 6px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 50px;
+            border-top: 1px solid #ccd6ce;
+        }
+
+        /* RWD 響應式調整 */
+        @media (max-width: 768px) {
+            .swot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頁首導覽列 -->
+    <header class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 30px;">
+        <div class="logo" style="font-size: 1.2rem;">🎬 暫停蔗一刻｜影展專題</div>
+        <nav class="nav-links" style="display: flex; gap: 20px;">
+            <a href="#home" class="active">專題首頁</a>
+            <a href="#story">糖廠記憶</a>
+            <a href="#film-section">影展短片</a>
+            <a href="#swot-section">SWOT分析</a>
+            <a href="#explore">探索單元</a>
+        </nav>
+    </header>
+
+    <!-- 主要版面 (Grid 架構) -->
+    <div class="layout-container" style="display: grid; grid-template-columns: 260px 1fr; gap: 30px; max-width: 1200px; margin: 30px auto; padding: 0 20px;">
+        
+        <!-- 側邊欄 Sidebar -->
+        <aside class="sidebar">
+            <div style="margin-bottom: 25px;">
+                <h3>快速導覽</h3>
+                <ul style="list-style: none; padding: 0; margin-top: 10px; line-height: 2;">
+                    <li><a href="#home" style="text-decoration: none;">▪ 專題主視覺</a></li>
+                    <li><a href="#about" style="text-decoration: none;">▪ 專題核心理念</a></li>
+                    <li><a href="#film-section" style="text-decoration: none;">▪ 影展短片觀看</a></li>
+                    <li><a href="#swot-section" style="text-decoration: none;">▪ 專題 SWOT 分析</a></li>
+                    <li><a href="#explore" style="text-decoration: none;">▪ 探索專題單元</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>參觀與交通資訊</h3>
+                <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); margin-top: 10px;">
+                    <strong>📍 地點：</strong><br>臺中市東區樂業路 30 號<br><br>
+                    <strong>🚄 交通：</strong><br>鄰近臺中車站、轉運中心與 LaLaport 商圈。<br><br>
+                    <strong>🌿 範圍：</strong><br>營業所本體及 6 公頃星泉湖生態綠地。
+                </p>
+            </div>
+        </aside>
+
+        <!-- 主內容區 Main Content -->
+        <main class="main-content">
+            <!-- Hero 封面橫幅 -->
+            <section id="home" class="hero">
+                <h1>暫停蔗一刻</h1>
+                <p style="font-size: 1.15rem; line-height: 1.6; opacity: 0.95; margin-bottom: 10px;">
+                    城市巨輪從不停歇，但百年糖廠的歲月痕跡與湖畔波光，邀請你在此刻卸下防備，給自己一段喘息的空間。
+                </p>
+                <a href="#film-section" class="btn-custom">觀看影展短片</a>
+            </section>
+
+            <!-- 專題介紹 -->
+            <section id="about" class="content-box">
+                <h2>專題核心理念</h2>
+                <p style="font-style: italic; color: var(--accent-warm); margin-bottom: 12px; font-weight: 500;">
+                    「在舊時光的紅磚牆下，重新找回內心的平靜頻率」
+                </p>
+                <p style="line-height: 1.8; color: #333d36;">
+                    面對課業與未來的雙重喧囂，我們常常忘記適時按下暫停。本專題選址於滿載歷史記憶的帝國製糖廠臺中營業所，透過影像鏡頭與場域對話，引導觀者在歷史與自然的交織中，完成一場溫柔的心靈充電。
+                </p>
+            </section>
+
+            <!-- 影展短片導向區塊 -->
+            <section id="film-section" class="content-box">
+                <h2>影展核心短片</h2>
+                <p style="color: var(--text-muted); margin-bottom: 10px;">透過鏡頭，感受在糖廠找回呼吸節奏的溫柔時刻</p>
+                
+                <div class="video-banner">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 8px; color: #f5eedc;">🎬 點擊前往觀賞影展短片</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 15px;">開啟專屬影像故事，感受百年糖廠與年輕世代的心靈對話。</p>
+                    <a href="https://youtu.be/wvQ-pu0ptlw" target="_blank" class="video-btn">▶ 立即在 YouTube 觀看短片</a>
+                </div>
+            </section>
+
+            <!-- SWOT 分析區塊 -->
+            <section id="swot-section" class="content-box">
+                <h2>專題 SWOT 分析</h2>
+                <p style="color: var(--text-muted); margin-bottom: 15px;">針對「暫停蔗一刻」影展企劃進行的市場與場域優劣勢評估</p>
+                
+                <div class="swot-grid">
+                    <!-- 優勢 (Strengths) -->
+                    <div class="swot-card">
+                        <h3>💪 優勢 (Strengths)</h3>
+                        <ul>
+                            <li><strong>在地歷史文化：</strong>結合帝國製糖廠獨特的紅磚建築與工業遺構背景。</li>
+                            <li><strong>精準受眾定位：</strong>聚焦 18～25 歲面臨課業與職場壓力的年輕族群。</li>
+                            <li><strong>跨域媒合影像：</strong>透過原創短片與空間展示，賦予舊空間全新情感連結。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 劣勢 (Weaknesses) -->
+                    <div class="swot-card">
+                        <h3>🔍 劣勢 (Weaknesses)</h3>
+                        <ul>
+                            <li><strong>資源相對有限：</strong>以學生大二專題形式製作，推廣預算與人力較少。</li>
+                            <li><strong>展期與天氣變數：</strong>戶外星泉湖周邊活動易受氣候與季節天候影響。</li>
+                            <li><strong>數位觸及門檻：</strong>初期主要依賴網路社群與校內傳播，知名度尚在累積。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 機會 (Opportunities) -->
+                    <div class="swot-card">
+                        <h3>🌱 機會 (Opportunities)</h3>
+                        <ul>
+                            <li><strong>商圈聚客效應：</strong>鄰近 LaLaport 商圈與臺中車站，具備龐大過路人潮。</li>
+                            <li><strong>舊城再生議題：</strong>搭上臺中東區舊城活化與文創市集蓬勃發展的熱潮。</li>
+                            <li><strong>數位行銷擴散：</strong>透過影音平台與社群短影音，易引起青年共鳴與轉發。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 威脅 (Threats) -->
+                    <div class="swot-card">
+                        <h3>⚠️ 威脅 (Threats)</h3>
+                        <ul>
+                            <li><strong>多元休閒競爭：</strong>面臨當代各式室內商場與商業展覽活動的注意力分散。</li>
+                            <li><strong>空間利用限制：</strong>歷史建築內部空間在策展動線上具有一定法規與維護限制。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 探索專題卡片區 -->
+            <section id="explore" class="content-box">
+                <h2>探索專題單元</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">跨越工業遺產與當代生活脈動的對話體驗</p>
+                
+                <div class="grid-3-col" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                    <article class="card">
+                        <img src="images/1024x768_attractions-image-mwp5ghjdhuc0itvym5e1ne.jpg" alt="紅磚建築" style="width:100%; height: 130px; object-fit: cover; border-radius: 4px;">
+                        <h3>工業遺構與記憶</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">凝視日治時期營業所的建築肌理，感受老廠房的重生故事。</p>
+                    </article>
+                    <article class="card">
+                        <img src="images/20230505123150_28.jpg" alt="湖畔綠地" style="width:100%; height: 130px; object-fit: cover; border-radius: 4px;">
+                        <h3>星泉湖畔與生態</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">漫步於湧泉公園的綠帶水景，洗滌日常積累的煩躁與疲憊。</p>
+                    </article>
+                    <article class="card">
+                        <img src="images/eprice_2_631a92cea1736cb59c521658ddd041f6.jpg" alt="獨立短片" style="width:100%; height: 130px; object-fit: cover; border-radius: 4px;">
+                        <h3>微光短片與對話</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">透過獨立影像敘事，記錄年輕世代在糖廠尋找自我的影像軌跡。</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>&copy; 2026 暫停蔗一刻｜大二帝國製糖廠影展專題 All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

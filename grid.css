@@ -1,0 +1,36 @@
+/* Grid 系統與 RWD 響應式排版 */
+.layout-container {
+    display: grid;
+    grid-template-columns: 240px 1fr; /* 左側邊欄 240px，右側主內容佔滿剩餘空間 */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 三欄式電影卡片 */
+    gap: 20px;
+    margin-top: 15px;
+}
+
+/* RWD 手機響應式媒體查詢 (當螢幕小於 768px 時觸發) */
+@media (max-width: 768px) {
+    .layout-container {
+        grid-template-columns: 1fr; /* 手機上改為單欄顯示，避免跑版 */
+    }
+
+    .grid-3-col {
+        grid-template-columns: 1fr; /* 手機上電影卡片改為單欄排列 */
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+}
